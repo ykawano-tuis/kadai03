@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="urf-8">
+        <meta charset="utf-8">
         <title>演習課題3-4：自動販売機</title>
     </head>
     <body>
@@ -18,18 +18,26 @@
                 { id: 8, name: "紅茶", price: 140, stock: 6 }
             ]
 
+            const inum = "商品番号:";//iはitemsの略
+            const iname = "商品名:";
+            const istock = "在庫数:";
+            const iprice = "金額:";
             // 商品一覧の表示関数
             function showItemList() {
                 console.log("商品は以下の" + items.length + "種類です。");
 
                 // 配列の内容を項目毎に出力
                 // ここにコードを書く
+                for(let item of items){
+                    console.log(inum + item.id + "," + iname + item.name + "," + iprice + item.price + "," + istock + item.stock)
+                }
                 console.log(""); // 空行の出力
             }
 
             // 商品購入の関数
             function buyItem(no) {
                 // ここにコードを書く
+                console.log(inum,item[no.id] + "," + iname,item[no.name] + "を購入します");
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
@@ -42,7 +50,7 @@
         </script>
     </body>
 </html>
-<!-- 
+<!--
 期待される出力例
 -----------------
 商品は以下の8種類です。
