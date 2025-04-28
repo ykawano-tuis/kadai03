@@ -37,7 +37,18 @@
             // 商品購入の関数
             function buyItem(no) {
                 // ここにコードを書く
-                console.log(inum,item[no.id] + "," + iname,item[no.name] + "を購入します");
+                buyno = no-1;
+                if(buyno>=0){
+                    console.log(inum,items[buyno].id + "," + iname,items[buyno].name + "を購入します");
+                    if(items[buyno].stock>0){
+                        items[buyno].stock--;
+                    }else{
+                        console.log("商品の在庫がありません");
+                    }
+                }else{
+                    console.log(no + "は無効な商品番号です");
+                }
+                console.log("")
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
@@ -46,7 +57,7 @@
 
             buyItem(5); // 商品購入の関数呼び出し
             buyItem(5); // 商品購入の関数呼び出し
-
+            buyItem(0);
         </script>
     </body>
 </html>
