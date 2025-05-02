@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="urf-8">
+        <meta charset="utf-8">
         <title>演習課題3-2</title>
     </head>
     <body>
         <script>
-            function sum(a) { // 引数は配列
-                let s = 0; // 合計値の計算用
-                // 配列を参照して合計値を計算する処理
-                return s;  // 戻り値はs
+            function sum(a) { 
+                let s = 0; 
+                for (let i = 0; i < a.length; i++) {
+                    s += a[i]; 
+                }
+                return s;
             }
             
             let b = [10, 8, 14, 15];
